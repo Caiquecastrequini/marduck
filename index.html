@@ -18,6 +18,7 @@
       justify-content: space-between;
       padding: 20px 40px;
       background-color: #001a35;
+      flex-wrap: wrap;
     }
 
     .logo {
@@ -27,16 +28,25 @@
       letter-spacing: 2px;
     }
 
-    nav a {
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
       color: white;
       text-decoration: none;
       margin-left: 20px;
       font-size: 1em;
       transition: color 0.3s;
+      padding: 8px 14px;
+      border-radius: 6px;
     }
 
-    nav a:hover {
-      color: #00d1ff;
+    .nav-links a:hover {
+      background-color: #00d1ff;
+      color: #001f3f;
     }
 
     .hero {
@@ -70,8 +80,15 @@
         align-items: flex-start;
       }
 
-      nav {
+      .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
         margin-top: 10px;
+        gap: 10px;
+      }
+
+      .nav-links a {
+        margin-left: 0;
       }
 
       .hero h1 {
@@ -83,11 +100,13 @@
 <body>
   <header>
     <div class="logo">MARDUCK</div>
-    <nav>
+    <nav class="nav-links">
       <a href="#">Início</a>
       <a href="#">Sobre</a>
       <a href="#">Soluções</a>
       <a href="#">Contato</a>
+      <a href="#">Login</a>
+      <a href="https://caiquecastrequini.github.io/ris-agendamento/">RIS</a>
     </nav>
   </header>
 
