@@ -2,10 +2,11 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MARDUCK | Tecnologias para Saúde</title>
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: white;
@@ -14,19 +15,28 @@
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 40px;
-      background-color: rgba(0, 26, 53, 0.9); /* transparente para ver fundo */
+      padding: 4px 20px; /* reduzido ainda mais */
+      background-color: rgba(0, 26, 53, 0.9);
       flex-wrap: wrap;
     }
 
     .logo {
-      font-size: 1.8em;
+      font-size: 1.5em; /* reduzido */
       font-weight: bold;
       color: white;
       letter-spacing: 2px;
@@ -41,10 +51,10 @@
     .nav-links a {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
-      font-size: 1em;
+      margin-left: 18px;
+      font-size: 0.95em; /* reduzido */
       transition: color 0.3s, background-color 0.3s;
-      padding: 8px 14px;
+      padding: 6px 12px;
       border-radius: 6px;
     }
 
@@ -54,52 +64,71 @@
     }
 
     .hero {
-      text-align: center;
-      padding: 100px 20px;
-      /* Removido fundo azul semitransparente para mostrar o fundo da página */
-    }
-
-    .hero h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
-    }
-
-    .hero p {
-      font-size: 1.3em;
-      max-width: 700px;
-      margin: 0 auto;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 40px;
       color: #cfd8dc;
       text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
     }
 
-    footer {
+    .hero-content {
+      max-width: 420px;
+      width: 100%;
+      line-height: 1.4;
+      word-wrap: break-word;
       text-align: center;
-      padding: 30px;
-      font-size: 0.9em;
-      background-color: rgba(0, 26, 53, 0.9);
-      color: #ccc;
     }
 
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
+    .hero h1 {
+      font-size: 26px;
+      margin: 0 0 12px 0;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 0.8em; /* fonte reduzida */
+      background-color: rgba(0, 26, 53, 0.9);
+      color: #ccc;
+      margin-top: auto;
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        justify-content: center;
+        text-align: center;
       }
 
-      .nav-links {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 10px;
-        gap: 10px;
-      }
-
-      .nav-links a {
-        margin-left: 0;
+      .hero-content {
+        max-width: 100%;
+        padding: 0 20px;
+        text-align: center;
       }
 
       .hero h1 {
-        font-size: 2em;
+        font-size: 24px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .logo {
+        font-size: 1.4em;
+      }
+
+      .nav-links a {
+        font-size: 0.9em;
+        margin-left: 12px;
+        padding: 5px 10px;
       }
     }
   </style>
@@ -107,6 +136,7 @@
 <body>
   <header>
     <div class="logo">MARDUCK</div>
+
     <nav class="nav-links">
       <a href="#">Início</a>
       <a href="#">Sobre</a>
@@ -118,8 +148,10 @@
   </header>
 
   <section class="hero">
-    <h1>Inovando a Saúde com Tecnologia</h1>
-    <p>A MARDUCK desenvolve soluções tecnológicas que transformam o cuidado com a saúde, integrando inovação, segurança e bem-estar.</p>
+    <div class="hero-content">
+      <h1>Inovando a Saúde com Tecnologia</h1>
+      <p>A MARDUCK desenvolve soluções tecnológicas que transformam o cuidado com a saúde, integrando inovação, segurança e bem-estar.</p>
+    </div>
   </section>
 
   <footer>
