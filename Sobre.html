@@ -2,23 +2,51 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sobre - Marrduck</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sobre - MARDUCK</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+    html, body {
+      height: 100%;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f4f4f4;
       color: #333;
     }
 
     header {
-      background-color: #005c99;
-      color: #fff;
-      padding: 20px 10px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: rgba(0, 26, 53, 0.9);
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: white;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 16px;
+      padding: 6px 12px;
+      font-size: 0.95em;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: #00d1ff;
+      color: #001f3f;
     }
 
     main {
@@ -39,8 +67,8 @@
     }
 
     .content h1 {
-      text-align: left;
       color: #005c99;
+      margin-bottom: 20px;
     }
 
     .content h2 {
@@ -71,6 +99,15 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
+    footer {
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 0.8em;
+      background-color: rgba(0, 26, 53, 0.9);
+      color: #ccc;
+      margin-top: 60px;
+    }
+
     @media (max-width: 768px) {
       main {
         flex-direction: column;
@@ -91,11 +128,22 @@
 <body>
 
   <header>
-    <h1>Sobre a Marrduck</h1>
+    <div class="logo">MARDUCK</div>
+    <nav class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="Sobre.html">Sobre</a>
+      <a href="Soluções.html">Soluções</a>
+      <a href="Contato.html">Contato</a>
+      <a href="#">Login</a>
+      <a href="https://ohif-viewer-342968034926.us-central1.run.app/projects/pacs-cloud-465309/locations/us-central1/datasets/dataset1/dicomStores/dicomstore1" target="_blank">PACS</a>
+      <a href="https://caiquecastrequini.github.io/ris-agendamento/" target="_blank">RIS</a>
+    </nav>
   </header>
 
   <main>
     <div class="content">
+      <h1>Sobre a Marduck</h1>
+
       <h2>🌍 Saúde para Todos, em Qualquer Lugar</h2>
       <ul>
         <li>Atuação em centros urbanos com estrutura médica completa.</li>
@@ -112,28 +160,34 @@
 
       <h2>📱💻 Acessível em Mobile e Desktop</h2>
       <ul>
-        <li>Soluções acessadas diretamente pelo navegador — sem instalação.</li>
+        <li>Acesso via navegador, sem necessidade de instalação.</li>
         <li>Compatível com smartphones, tablets e computadores.</li>
-        <li>Permite visualizar imagens médicas (DICOM) e acessar o sistema de qualquer lugar.</li>
-        <li>Interface leve, responsiva e intuitiva, mesmo em conexões lentas.</li>
+        <li>Visualização de imagens médicas (DICOM) diretamente no web.</li>
+        <li>Interface rápida e responsiva, mesmo em conexões lentas.</li>
       </ul>
 
       <h2>💡 Por que Escolher a Marrduck?</h2>
       <ul>
-        <li>Soluções escaláveis e adaptadas a cada realidade.</li>
-        <li>Foco em inovação, inclusão digital e conectividade.</li>
+        <li>Soluções escaláveis adaptadas a cada realidade.</li>
+        <li>Inovação, inclusão digital e conectividade contínua.</li>
         <li>Suporte técnico com empatia e excelência.</li>
       </ul>
 
       <h2>🤝 Junte-se a Essa Revolução</h2>
-      <p>Conectamos pessoas, dados e saúde em uma rede global de cuidado.  
-      <strong>Descubra nossas soluções e transforme a saúde junto com a Marrduck.</strong></p>
+      <p>
+        Conectamos pessoas, dados e o cuidado em uma rede global.
+        <strong>Descubra nossas soluções e transforme a saúde com a Marrduck.</strong>
+      </p>
     </div>
 
     <div class="image">
-      <img src="Comand.center4.png" alt="Centro de Comando Marrduck" />
+      <img src="Comand center.4.jpeg" alt="Centro de Comando Marrduck" />
     </div>
   </main>
+
+  <footer>
+    © 2025 MARDUCK. Todos os direitos reservados.
+  </footer>
 
 </body>
 </html>
