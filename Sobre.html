@@ -1,44 +1,183 @@
-<main>
-  <div class="content">
-    <h1>Sobre a Marrduck</h1>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sobre - MARDUCK</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      height: 100%;
+    }
 
-    <h2>🌍 Saúde para Todos, em Qualquer Lugar</h2>
-    <ul>
-      <li>Atuação em centros urbanos com estrutura médica completa.</li>
-      <li>Atendimento a regiões remotas com pouca ou nenhuma infraestrutura.</li>
-      <li>Suporte para qualquer pessoa, em qualquer local do mundo.</li>
-    </ul>
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: rgba(0, 26, 53, 0.9);
+      flex-wrap: wrap;
+    }
 
-    <h2>⚙️ Integração Fácil e Eficiente</h2>
-    <ul>
-      <li>Conexão entre sistemas de saúde de forma simples e segura.</li>
-      <li>Uso dos protocolos DICOM e HL7 para padronização de dados.</li>
-      <li>Acesso completo à jornada do paciente.</li>
-    </ul>
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: white;
+      letter-spacing: 2px;
+    }
 
-    <h2>📱💻 Acessível em Mobile e Desktop</h2>
-    <ul>
-      <li>Acesso via navegador, sem necessidade de instalação.</li>
-      <li>Compatível com smartphones, tablets e computadores.</li>
-      <li>Visualização de imagens médicas (DICOM) diretamente na web.</li>
-      <li>Interface rápida e responsiva, mesmo em conexões lentas.</li>
-    </ul>
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-    <h2>💡 Por que Escolher a Marrduck?</h2>
-    <ul>
-      <li>Soluções escaláveis adaptadas a cada realidade.</li>
-      <li>Inovação, inclusão digital e conectividade contínua.</li>
-      <li>Suporte técnico com empatia e excelência.</li>
-    </ul>
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 16px;
+      padding: 6px 12px;
+      font-size: 0.95em;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
 
-    <h2>🤝 Junte-se a Essa Revolução</h2>
-    <p>
-      Conectamos pessoas, dados e o cuidado em uma rede global.
-      <strong>Descubra nossas soluções e transforme a saúde com a Marduck.</strong>
-    </p>
-  </div>
+    .nav-links a:hover {
+      background-color: #00d1ff;
+      color: #001f3f;
+    }
 
-  <div class="image">
-    <img src="Comand center.4.jpeg" alt="Centro de Comando Marrduck" />
-  </div>
-</main>
+    main {
+      display: flex;
+      height: calc(100vh - 80px);
+      overflow: hidden;
+    }
+
+    .content {
+      flex: 1;
+      padding: 40px;
+      overflow-y: auto;
+      background-color: white;
+    }
+
+    .content h1 {
+      color: #005c99;
+      margin-bottom: 20px;
+    }
+
+    .content h2 {
+      color: #0077cc;
+      margin-top: 24px;
+    }
+
+    .content ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .content li::before {
+      content: "✔️ ";
+      color: #28a745;
+      margin-right: 6px;
+    }
+
+    .image {
+      flex: 1;
+      min-width: 300px;
+      max-width: 50%;
+      background: url('Comand center.4.jpeg') no-repeat center center;
+      background-size: cover;
+    }
+
+    footer {
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 0.8em;
+      background-color: rgba(0, 26, 53, 0.9);
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .image {
+        height: 300px;
+        max-width: 100%;
+      }
+
+      .content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">MARDUCK</div>
+    <nav class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="Sobre.html">Sobre</a>
+      <a href="Soluções.html">Soluções</a>
+      <a href="Contato.html">Contato</a>
+      <a href="#">Login</a>
+      <a href="https://ohif-viewer-342968034926.us-central1.run.app/projects/pacs-cloud-465309/locations/us-central1/datasets/dataset1/dicomStores/dicomstore1" target="_blank">PACS</a>
+      <a href="https://caiquecastrequini.github.io/ris-agendamento/" target="_blank">RIS</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="content">
+      <h1>Sobre a Marduck</h1>
+
+      <h2>🌍 Saúde para Todos, em Qualquer Lugar</h2>
+      <ul>
+        <li>Atuação em centros urbanos com estrutura médica completa.</li>
+        <li>Atendimento a regiões remotas com pouca ou nenhuma infraestrutura.</li>
+        <li>Suporte para qualquer pessoa, em qualquer local do mundo.</li>
+      </ul>
+
+      <h2>⚙️ Integração Fácil e Eficiente</h2>
+      <ul>
+        <li>Conexão entre sistemas de saúde de forma simples e segura.</li>
+        <li>Uso dos protocolos DICOM e HL7 para padronização de dados.</li>
+        <li>Acesso completo à jornada do paciente.</li>
+      </ul>
+
+      <h2>📱💻 Acessível em Mobile e Desktop</h2>
+      <ul>
+        <li>Acesso via navegador, sem necessidade de instalação.</li>
+        <li>Compatível com smartphones, tablets e computadores.</li>
+        <li>Visualização de imagens médicas (DICOM) diretamente na web.</li>
+        <li>Interface rápida e responsiva, mesmo em conexões lentas.</li>
+      </ul>
+
+      <h2>💡 Por que Escolher a Marrduck?</h2>
+      <ul>
+        <li>Soluções escaláveis adaptadas a cada realidade.</li>
+        <li>Inovação, inclusão digital e conectividade contínua.</li>
+        <li>Suporte técnico com empatia e excelência.</li>
+      </ul>
+
+      <h2>🤝 Junte-se a Essa Revolução</h2>
+      <p>
+        Conectamos pessoas, dados e o cuidado em uma rede global.
+        <strong>Descubra nossas soluções e transforme a saúde com a Marduck.</strong>
+      </p>
+    </div>
+
+    <div class="image"></div>
+  </main>
+
+  <footer>
+    © 2025 MARDUCK. Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
