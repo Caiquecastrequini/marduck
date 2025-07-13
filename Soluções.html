@@ -1,166 +1,235 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Soluções | MARDUCK</title>
-  <style>
-    /* Reset e básico */
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: white;
-      color: #002b45;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Soluções | MARDUCK</title>
+<style>
+  /* Reset básico */
+  * {
+    box-sizing: border-box;
+  }
 
-    /* Header e menu igual ao index.html */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 4px 20px;
-      background-color: rgba(0, 26, 53, 0.9);
-      flex-wrap: wrap;
-    }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff;
+    color: #002b45;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
 
-    .logo {
-      font-size: 1.5em;
-      font-weight: bold;
-      color: white;
-      letter-spacing: 2px;
-    }
+  header {
+    background-color: rgba(0, 26, 53, 0.9);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+  .logo {
+    font-size: 1.7em;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 2px;
+  }
 
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      margin-left: 18px;
-      font-size: 0.95em;
-      transition: color 0.3s, background-color 0.3s;
-      padding: 6px 12px;
-      border-radius: 6px;
-    }
+  nav.nav-links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
 
-    .nav-links a:hover {
-      background-color: #00d1ff;
-      color: #001f3f;
-    }
+  nav.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95em;
+    padding: 7px 14px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+  }
 
-    .nav-links a.active {
-      background-color: #00d1ff;
-      color: #001f3f;
-      font-weight: bold;
-    }
+  nav.nav-links a:hover,
+  nav.nav-links a.active {
+    background-color: #00d1ff;
+    color: #001f3f;
+  }
 
-    /* Conteúdo principal com texto e imagens */
-    .main-content {
-      flex: 1;
-      display: flex;
-      flex-direction: row;
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-      align-items: center; /* vertical center */
-      gap: 40px;
-    }
+  main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 40px auto 60px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
 
-    .text-box {
-      flex: 1;
-      padding-right: 40px;
-    }
+  /* Caixa do texto principal */
+  .text-box {
+    max-width: 100%;
+    animation: fadeInUp 0.8s ease forwards;
+  }
 
-    .text-box h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
+  .text-box h2 {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
 
-    .text-box p {
-      line-height: 1.6;
-      font-size: 16px;
-    }
+  .text-box p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
 
-    /* Caixa das imagens - maior e centralizado */
-    .image-box {
-      flex: 1;
-      max-width: 600px;
-      height: 400px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+  /* Botão de ação */
+  .btn-demo {
+    display: inline-block;
+    background: #00d1ff;
+    color: #001f3f;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-top: 20px;
+    box-shadow: 0 6px 15px rgba(0,209,255,0.5);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
 
-    .image-box img {
-      position: absolute;
-      height: 100%;
-      width: auto;
-      max-width: 100%;
-      object-fit: contain;
+  .btn-demo:hover {
+    background: #008fbf;
+    box-shadow: 0 8px 25px rgba(0,143,191,0.7);
+    color: white;
+  }
+
+  /* Galeria principal */
+  .gallery-main {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    position: relative;
+    aspect-ratio: 4 / 3;
+    animation: fadeIn 1s ease forwards;
+  }
+
+  .gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+  }
+
+  /* Miniaturas */
+  .gallery-thumbs {
+    margin-top: 16px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+  }
+
+  .gallery-thumbs img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: border-color 0.3s;
+  }
+
+  .gallery-thumbs img.active {
+    border-color: #00d1ff;
+  }
+
+  /* Player de vídeo estilizado */
+  .video-demo {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    aspect-ratio: 4 / 3;
+    position: relative;
+    animation: fadeIn 1.2s ease forwards;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  footer {
+    background-color: rgba(0, 26, 53, 0.9);
+    color: #ccc;
+    text-align: center;
+    font-size: 0.9em;
+    padding: 16px 20px;
+  }
+
+  /* Animações */
+  @keyframes fadeInUp {
+    0% {
       opacity: 0;
-      animation: carousel 50s infinite;
+      transform: translateY(25px);
     }
-
-    .image-box img:nth-child(1) { animation-delay: 0s; }
-    .image-box img:nth-child(2) { animation-delay: 10s; }
-    .image-box img:nth-child(3) { animation-delay: 20s; }
-    .image-box img:nth-child(4) { animation-delay: 30s; }
-    .image-box img:nth-child(5) { animation-delay: 40s; }
-
-    @keyframes carousel {
-      0% { opacity: 0; }
-      2% { opacity: 1; }
-      18% { opacity: 1; }
-      20% { opacity: 0; }
-      100% { opacity: 0; }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
+  }
 
-    footer {
-      text-align: center;
-      padding: 12px 20px;
-      font-size: 0.9em;
-      background-color: rgba(0, 26, 53, 0.9);
-      color: white;
-      margin-top: auto;
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
     }
-
-    /* Responsividade */
-    @media (max-width: 900px) {
-      .main-content {
-        flex-direction: column;
-        padding: 20px;
-      }
-
-      .text-box {
-        padding-right: 0;
-        margin-bottom: 30px;
-      }
-
-      .image-box {
-        width: 100%;
-        max-width: 100%;
-        height: 250px;
-      }
+    100% {
+      opacity: 1;
     }
-  </style>
+  }
+
+  /* Responsividade */
+  @media (max-width: 1000px) {
+    main {
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .video-demo {
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+  @media (max-width: 700px) {
+    main {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin: 20px auto 40px;
+    }
+    .gallery-thumbs {
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+    .gallery-thumbs img {
+      flex: 0 0 auto;
+    }
+  }
+</style>
 </head>
 <body>
   <header>
     <div class="logo">MARDUCK</div>
     <nav class="nav-links">
-      <a href="https://caiquecastrequini.github.io/marduck/#">Início</a>
+      <a href="index.html">Início</a>
       <a href="#">Sobre</a>
       <a href="Solucoes.html" class="active">Soluções</a>
       <a href="#">Contato</a>
@@ -170,28 +239,66 @@
     </nav>
   </header>
 
-  <section class="main-content">
+  <main>
     <div class="text-box">
       <h2>MARDUCK PACS na Nuvem</h2>
       <p><strong>Suas Imagens Médicas Simples e Seguras!</strong></p>
-      <p>O MARDUCK PACS na nuvem é a solução ideal para gerenciar e compartilhar imagens médicas, como as de tomografia, ressonância e ultrassom.</p>
+      <p>O MARDUCK PACS na nuvem é a solução ideal para gerenciar e compartilhar imagens médicas, como tomografia, ressonância e ultrassom.</p>
       <p>Esqueça a complicação! Com ele, você acessa tudo facilmente pela internet ou Wi-Fi, seja no computador ou no celular.</p>
       <p>Garantimos que suas imagens são enviadas e armazenadas com total segurança, seguindo todas as normas e protocolos.</p>
       <p><strong>É a praticidade que você precisa com a confiança que você merece.</strong></p>
       <p>Quer saber mais e otimizar seu trabalho? <strong>Entre em contato conosco! Solicite uma demonstração.</strong></p>
+      <a href="#demo-video" class="btn-demo">Veja o Demo</a>
     </div>
 
-    <div class="image-box">
-      <img src="Comand center.0.jpeg" alt="Command 0" />
-      <img src="Comand center.1.jpeg" alt="Command 1" />
-      <img src="Comand center.2.jpeg" alt="Command 2" />
-      <img src="Comand center.3.jpeg" alt="Command 3" />
-      <img src="Comand center.4.jpeg" alt="Command 4" />
+    <div>
+      <div class="gallery-main">
+        <img id="mainImage" src="Comand center.0.jpeg" alt="Imagem principal MARDUCK PACS" />
+      </div>
+      <div class="gallery-thumbs" aria-label="Miniaturas das imagens">
+        <img src="Comand center.0.jpeg" alt="Miniatura 0" class="active" tabindex="0" />
+        <img src="Comand center.1.jpeg" alt="Miniatura 1" tabindex="0" />
+        <img src="Comand center.2.jpeg" alt="Miniatura 2" tabindex="0" />
+        <img src="Comand center.3.jpeg" alt="Miniatura 3" tabindex="0" />
+        <img src="Comand center.4.jpeg" alt="Miniatura 4" tabindex="0" />
+      </div>
     </div>
-  </section>
+
+    <div class="video-demo" id="demo-video" aria-label="Vídeo demonstrativo do sistema">
+      <video controls preload="metadata" poster="Comand center.0.jpeg" aria-describedby="videoDesc">
+        <source src="Demo.0.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeo HTML5.
+      </video>
+      <p id="videoDesc" style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
+        Vídeo demonstrativo do sistema MARDUCK PACS na nuvem mostrando funcionalidades principais.
+      </p>
+    </div>
+  </main>
 
   <footer>
     © 2025 MARDUCK. Todos os direitos reservados.
   </footer>
+
+<script>
+  // Script para trocar imagem principal ao clicar na miniatura
+  const mainImage = document.getElementById('mainImage');
+  const thumbs = document.querySelectorAll('.gallery-thumbs img');
+
+  thumbs.forEach((thumb, idx) => {
+    thumb.addEventListener('click', () => {
+      mainImage.src = thumb.src;
+      thumbs.forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    });
+
+    // Acessibilidade: permitir trocar com Enter ou Space no teclado
+    thumb.addEventListener('keydown', e => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        thumb.click();
+      }
+    });
+  });
+</script>
 </body>
 </html>
