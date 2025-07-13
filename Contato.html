@@ -1,150 +1,150 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Contato | MARDUCK</title>
-<style>
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fff;
-    color: #002b45;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  header {
-    background-color: rgba(0, 26, 53, 0.9);
-    padding: 12px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .logo {
-    font-size: 1.7em;
-    font-weight: 700;
-    color: white;
-    letter-spacing: 2px;
-  }
-  .nav-links {
-    display: flex;
-    gap: 18px;
-    flex-wrap: wrap;
-  }
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95em;
-    padding: 7px 14px;
-    border-radius: 6px;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  .nav-links a:hover,
-  .nav-links a.active {
-    background-color: #00d1ff;
-    color: #001f3f;
-  }
-  main {
-    flex: 1;
-    max-width: 800px;
-    margin: 60px auto;
-    padding: 0 20px;
-  }
-  h1 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    color: #001f3f;
-  }
-  .contact-info {
-    background: #f5f9ff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
-    margin-bottom: 40px;
-  }
-  .contact-item {
-    margin-bottom: 16px;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-  }
-  .contact-item span {
-    margin-right: 12px;
-    font-size: 1.4rem;
-    color: #00bcd4;
-  }
-  .form-container {
-    margin-bottom: 40px;
-  }
-  form {
-    background: #f5f9ff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  input, textarea {
-    padding: 12px;
-    font-size: 1rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-  }
-  textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
-  button, .btn-whatsapp {
-    display: inline-block;
-    font-weight: bold;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 1rem;
-    margin-top: 10px;
-  }
-  button {
-    background-color: #00d1ff;
-    color: #001f3f;
-  }
-  button:hover {
-    background-color: #00a9cc;
-    color: white;
-  }
-  .btn-whatsapp {
-    background-color: #25D366;
-    color: white;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .btn-whatsapp:hover {
-    background-color: #1ebe5b;
-  }
-  .btn-whatsapp span {
-    font-size: 1.4rem;
-  }
-  footer {
-    background-color: rgba(0, 26, 53, 0.9);
-    color: #ccc;
-    text-align: center;
-    font-size: 0.9em;
-    padding: 16px 20px;
-    margin-top: auto;
-  }
-  @media (max-width: 600px) {
-    .logo { font-size: 1.4em; }
-    h1 { font-size: 1.8rem; }
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contato | MARDUCK</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff;
+      color: #002b45;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background-color: rgba(0, 26, 53, 0.9);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.7em;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 2px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95em;
+      padding: 7px 14px;
+      border-radius: 6px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      background-color: #00d1ff;
+      color: #001f3f;
+    }
+    main {
+      flex: 1;
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: #001f3f;
+    }
+    .contact-info {
+      background: #f5f9ff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+      margin-bottom: 40px;
+    }
+    .contact-item {
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+    }
+    .contact-item span {
+      margin-right: 12px;
+      font-size: 1.4rem;
+      color: #00bcd4;
+    }
+    .form-container {
+      margin-bottom: 40px;
+    }
+    form {
+      background: #f5f9ff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    input, textarea {
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    button, .btn-whatsapp {
+      display: inline-block;
+      font-weight: bold;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+    button {
+      background-color: #00d1ff;
+      color: #001f3f;
+    }
+    button:hover {
+      background-color: #00a9cc;
+      color: white;
+    }
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-whatsapp:hover {
+      background-color: #1ebe5b;
+    }
+    .btn-whatsapp span {
+      font-size: 1.4rem;
+    }
+    footer {
+      background-color: rgba(0, 26, 53, 0.9);
+      color: #ccc;
+      text-align: center;
+      font-size: 0.9em;
+      padding: 16px 20px;
+      margin-top: auto;
+    }
+    @media (max-width: 600px) {
+      .logo { font-size: 1.4em; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -174,15 +174,22 @@
   </div>
 
   <div class="form-container">
-    <form>
+    <form action="https://formsubmit.co/el/wucuwe" method="POST">
       <input type="text" name="nome" placeholder="Seu nome" required>
       <input type="email" name="email" placeholder="Seu email" required>
       <textarea name="mensagem" placeholder="Digite sua mensagem..." required></textarea>
-      <button type="submit" disabled>Enviar Mensagem</button>
+
+      <!-- Anti-spam honeypot -->
+      <input type="text" name="_honey" style="display:none">
+
+      <!-- Redirecionamento -->
+      <input type="hidden" name="_next" value="https://caiquecastrequini.github.io/marduck/obrigado.html">
+
+      <!-- Desativa o captcha -->
+      <input type="hidden" name="_captcha" value="false">
+
+      <button type="submit">Enviar Mensagem</button>
     </form>
-    <p style="font-size:0.9rem;color:#777;">
-      O envio do formulário será ativado em breve. Por enquanto, use o WhatsApp ou envie um email diretamente.
-    </p>
   </div>
 </main>
 
