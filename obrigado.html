@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Obrigado | MARDUCK</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f9ff;
+      color: #002b45;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      padding: 40px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #001f3f;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+    button {
+      padding: 12px 20px;
+      background-color: #00d1ff;
+      color: #001f3f;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #00a9cc;
+      color: white;
+    }
+  </style>
+  <script>
+    function voltarInicio() {
+      window.location.href = "https://caiquecastrequini.github.io/marduck/index.html";
+    }
+
+    // Redireciona automaticamente após 10 segundos
+    setTimeout(voltarInicio, 10000);
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Mensagem enviada com sucesso! ✅</h1>
+    <p>Obrigado por entrar em contato com a MARDUCK.<br>
+    Em breve retornaremos sua mensagem.</p>
+    <button onclick="voltarInicio()">OK</button>
+  </div>
+
+</body>
+</html>
