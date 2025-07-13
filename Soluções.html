@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Soluções | MARDUCK</title>
   <style>
+    /* Reset e básico */
     html, body {
       margin: 0;
       padding: 0;
@@ -14,39 +15,54 @@
       height: 100%;
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
     }
 
-    header, footer {
+    /* Header e menu igual ao index.html */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 20px;
       background-color: rgba(0, 26, 53, 0.9);
-      color: white;
-      padding: 12px 20px;
+      flex-wrap: wrap;
     }
 
     .logo {
       font-size: 1.5em;
       font-weight: bold;
+      color: white;
+      letter-spacing: 2px;
     }
 
     .nav-links {
       display: flex;
-      gap: 15px;
+      align-items: center;
       flex-wrap: wrap;
-      margin-top: 5px;
     }
 
     .nav-links a {
       color: white;
       text-decoration: none;
+      margin-left: 18px;
+      font-size: 0.95em;
+      transition: color 0.3s, background-color 0.3s;
       padding: 6px 12px;
       border-radius: 6px;
-      transition: background-color 0.3s;
     }
 
-    .nav-links a:hover, .nav-links a.active {
+    .nav-links a:hover {
       background-color: #00d1ff;
       color: #001f3f;
     }
 
+    .nav-links a.active {
+      background-color: #00d1ff;
+      color: #001f3f;
+      font-weight: bold;
+    }
+
+    /* Conteúdo principal com texto e imagens */
     .main-content {
       flex: 1;
       display: flex;
@@ -54,6 +70,8 @@
       padding: 40px 20px;
       max-width: 1200px;
       margin: auto;
+      align-items: center; /* vertical center */
+      gap: 40px;
     }
 
     .text-box {
@@ -71,21 +89,26 @@
       font-size: 16px;
     }
 
+    /* Caixa das imagens - maior e centralizado */
     .image-box {
       flex: 1;
-      max-width: 500px;
+      max-width: 600px;
+      height: 400px;
       position: relative;
-      height: 320px;
       overflow: hidden;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .image-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
       position: absolute;
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
       opacity: 0;
       animation: carousel 50s infinite;
     }
@@ -106,13 +129,18 @@
 
     footer {
       text-align: center;
+      padding: 12px 20px;
       font-size: 0.9em;
+      background-color: rgba(0, 26, 53, 0.9);
+      color: white;
       margin-top: auto;
     }
 
+    /* Responsividade */
     @media (max-width: 900px) {
       .main-content {
         flex-direction: column;
+        padding: 20px;
       }
 
       .text-box {
@@ -122,6 +150,7 @@
 
       .image-box {
         width: 100%;
+        max-width: 100%;
         height: 250px;
       }
     }
@@ -133,11 +162,11 @@
     <nav class="nav-links">
       <a href="https://caiquecastrequini.github.io/marduck/#">Início</a>
       <a href="#">Sobre</a>
-      <a href="solucoes.html" class="active">Soluções</a>
+      <a href="Solucoes.html" class="active">Soluções</a>
       <a href="#">Contato</a>
       <a href="#">Login</a>
-      <a href="https://ohif-viewer-342968034926.us-central1.run.app/projects/pacs-cloud-465309/locations/us-central1/datasets/dataset1/dicomStores/dicomstore1" target="_blank">PACS</a>
-      <a href="https://caiquecastrequini.github.io/ris-agendamento/" target="_blank">RIS</a>
+      <a href="https://ohif-viewer-342968034926.us-central1.run.app/projects/pacs-cloud-465309/locations/us-central1/datasets/dataset1/dicomStores/dicomstore1" target="_blank" rel="noopener noreferrer">PACS</a>
+      <a href="https://caiquecastrequini.github.io/ris-agendamento/" target="_blank" rel="noopener noreferrer">RIS</a>
     </nav>
   </header>
 
@@ -166,4 +195,3 @@
   </footer>
 </body>
 </html>
-
