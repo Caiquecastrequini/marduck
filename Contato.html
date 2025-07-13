@@ -50,14 +50,14 @@
     }
     main {
       flex: 1;
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 0 20px;
+      width: 100%;
+      padding: 60px 40px;
     }
     h1 {
       font-size: 2.2rem;
       margin-bottom: 20px;
       color: #001f3f;
+      text-align: center;
     }
     .contact-info {
       background: #f5f9ff;
@@ -65,6 +65,9 @@
       border-radius: 12px;
       box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
       margin-bottom: 40px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .contact-item {
       margin-bottom: 16px;
@@ -79,6 +82,9 @@
     }
     .form-container {
       margin-bottom: 40px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
     }
     form {
       background: #f5f9ff;
@@ -88,12 +94,14 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
+      width: 100%;
     }
     input, textarea {
       padding: 12px;
       font-size: 1rem;
       border-radius: 6px;
       border: 1px solid #ccc;
+      width: 100%;
     }
     textarea {
       resize: vertical;
@@ -125,6 +133,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      margin-top: 20px;
     }
     .btn-whatsapp:hover {
       background-color: #1ebe5b;
@@ -143,6 +152,7 @@
     @media (max-width: 600px) {
       .logo { font-size: 1.4em; }
       h1 { font-size: 1.8rem; }
+      main { padding: 40px 20px; }
     }
   </style>
 </head>
@@ -165,9 +175,9 @@
   <h1>Fale com a MARDUCK</h1>
 
   <div class="contact-info">
-    <div class="contact-item"><span>📧</span><strong>Email:</strong> caique.carias94@hotmail.com</div>
-    <div class="contact-item"><span>📞</span><strong>Telefone:</strong> (11) 98302‑3916</div>
-    <div class="contact-item"><span>👤</span><strong>Falar com:</strong> Caique Castrequini</div>
+    <div class="contact-item"><span>📧</span><strong>Email: </strong> caique.carias94@hotmail.com</div>
+    <div class="contact-item"><span>📞</span><strong>Telefone: </strong> (11) 98302‑3916</div>
+    <div class="contact-item"><span>👤</span><strong>Falar com: </strong> Caique Castrequini</div>
     <a class="btn-whatsapp" href="https://wa.me/5511983023916" target="_blank">
       <span>💬</span> Falar pelo WhatsApp
     </a>
