@@ -64,8 +64,8 @@
     margin: 40px auto 60px;
     padding: 0 20px;
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 32px;
+    grid-template-columns: 1.3fr 1.7fr;
+    gap: 48px;
     align-items: start;
   }
 
@@ -88,7 +88,7 @@
   }
 
   /* Botão de ação */
-  .btn-demo {
+  .btn-video {
     display: inline-block;
     background: #00d1ff;
     color: #001f3f;
@@ -101,21 +101,28 @@
     transition: background-color 0.3s, box-shadow 0.3s;
   }
 
-  .btn-demo:hover {
+  .btn-video:hover {
     background: #008fbf;
     box-shadow: 0 8px 25px rgba(0,143,191,0.7);
     color: white;
   }
 
+  /* Container da galeria + vídeo */
+  .media-container {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
   /* Galeria principal */
   .gallery-main {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    aspect-ratio: 16 / 9;
     position: relative;
-    aspect-ratio: 4 / 3;
-    animation: fadeIn 1s ease forwards;
+    background: #000;
   }
 
   .gallery-main img {
@@ -123,43 +130,26 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 12px;
+    border-radius: 14px;
+    transition: opacity 1s ease;
+    opacity: 1;
+    position: absolute;
+    top: 0; left: 0;
   }
 
-  /* Miniaturas */
-  .gallery-thumbs {
-    margin-top: 16px;
-    display: flex;
-    gap: 14px;
-    justify-content: center;
-  }
-
-  .gallery-thumbs img {
-    width: 80px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-    border: 3px solid transparent;
-    transition: border-color 0.3s;
-  }
-
-  .gallery-thumbs img.active {
-    border-color: #00d1ff;
+  .gallery-main img.hidden {
+    opacity: 0;
+    pointer-events: none;
   }
 
   /* Player de vídeo estilizado */
   .video-demo {
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    aspect-ratio: 4 / 3;
-    position: relative;
-    animation: fadeIn 1.2s ease forwards;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    aspect-ratio: 16 / 9;
     background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
   }
 
   video {
@@ -188,39 +178,30 @@
     }
   }
 
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
   /* Responsividade */
   @media (max-width: 1000px) {
     main {
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
+      grid-template-columns: 1fr;
+      gap: 36px;
     }
-    .video-demo {
-      aspect-ratio: 16 / 9;
+
+    .media-container {
+      flex-direction: column;
     }
   }
 
-  @media (max-width: 700px) {
-    main {
-      grid-template-columns: 1fr;
-      gap: 24px;
-      margin: 20px auto 40px;
+  @media (max-width: 480px) {
+    .text-box h2 {
+      font-size: 1.8rem;
     }
-    .gallery-thumbs {
-      justify-content: flex-start;
-      overflow-x: auto;
-      padding-bottom: 8px;
+
+    .text-box p {
+      font-size: 1rem;
     }
-    .gallery-thumbs img {
-      flex: 0 0 auto;
+
+    .btn-video {
+      padding: 10px 24px;
+      font-size: 0.95rem;
     }
   }
 </style>
@@ -248,57 +229,29 @@
       <p>Garantimos que suas imagens são enviadas e armazenadas com total segurança, seguindo todas as normas e protocolos.</p>
       <p><strong>É a praticidade que você precisa com a confiança que você merece.</strong></p>
       <p>Quer saber mais e otimizar seu trabalho? <strong>Entre em contato conosco! Solicite uma demonstração.</strong></p>
-      <a href="#demo-video" class="btn-demo">Veja o Demo</a>
+      <a href="#demo-video" class="btn-video">Veja o vídeo</a>
     </div>
 
-    <div>
-      <div class="gallery-main">
-        <img id="mainImage" src="Comand center.0.jpeg" alt="Imagem principal MARDUCK PACS" />
+    <div class="media-container" aria-label="Galeria de imagens e vídeo do sistema">
+      <div class="gallery-main" aria-live="polite" aria-atomic="true">
+        <img src="Comand center.0.jpeg" alt="Imagem do sistema MARDUCK PACS 0" class="visible" />
+        <img src="Comand center.1.jpeg" alt="Imagem do sistema MARDUCK PACS 1" class="hidden" />
+        <img src="Comand center.2.jpeg" alt="Imagem do sistema MARDUCK PACS 2" class="hidden" />
+        <img src="Comand center.3.jpeg" alt="Imagem do sistema MARDUCK PACS 3" class="hidden" />
+        <img src="Comand center.4.jpeg" alt="Imagem do sistema MARDUCK PACS 4" class="hidden" />
       </div>
-      <div class="gallery-thumbs" aria-label="Miniaturas das imagens">
-        <img src="Comand center.0.jpeg" alt="Miniatura 0" class="active" tabindex="0" />
-        <img src="Comand center.1.jpeg" alt="Miniatura 1" tabindex="0" />
-        <img src="Comand center.2.jpeg" alt="Miniatura 2" tabindex="0" />
-        <img src="Comand center.3.jpeg" alt="Miniatura 3" tabindex="0" />
-        <img src="Comand center.4.jpeg" alt="Miniatura 4" tabindex="0" />
-      </div>
-    </div>
 
-    <div class="video-demo" id="demo-video" aria-label="Vídeo demonstrativo do sistema">
-      <video controls preload="metadata" poster="Comand center.0.jpeg" aria-describedby="videoDesc">
-        <source src="Demo.0.mp4" type="video/mp4" />
-        Seu navegador não suporta vídeo HTML5.
-      </video>
-      <p id="videoDesc" style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
-        Vídeo demonstrativo do sistema MARDUCK PACS na nuvem mostrando funcionalidades principais.
-      </p>
+      <div class="video-demo" id="demo-video" aria-label="Vídeo demonstrativo do sistema">
+        <video controls preload="metadata" poster="Comand center.0.jpeg" aria-describedby="videoDesc">
+          <source src="Demo.0.mp4" type="video/mp4" />
+          Seu navegador não suporta vídeo HTML5.
+        </video>
+        <p id="videoDesc" style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
+          Vídeo demonstrativo do sistema MARDUCK PACS na nuvem mostrando funcionalidades principais.
+        </p>
+      </div>
     </div>
   </main>
 
   <footer>
-    © 2025 MARDUCK. Todos os direitos reservados.
-  </footer>
-
-<script>
-  // Script para trocar imagem principal ao clicar na miniatura
-  const mainImage = document.getElementById('mainImage');
-  const thumbs = document.querySelectorAll('.gallery-thumbs img');
-
-  thumbs.forEach((thumb, idx) => {
-    thumb.addEventListener('click', () => {
-      mainImage.src = thumb.src;
-      thumbs.forEach(t => t.classList.remove('active'));
-      thumb.classList.add('active');
-    });
-
-    // Acessibilidade: permitir trocar com Enter ou Space no teclado
-    thumb.addEventListener('keydown', e => {
-      if(e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        thumb.click();
-      }
-    });
-  });
-</script>
-</body>
-</html>
+    © 2025 MARD
